@@ -58,7 +58,7 @@
                     @method('PATCH')
                     <p class="py-2">{{ $task->name }}</p>
                     <input type="hidden" name="is_finished" value="1">
-                    <flux:button type="submit">Fini</flux:button>
+                    <flux:button type="submit">✔</flux:button>
                 </form>
             @endif
             @if ($task->is_finished)
@@ -67,7 +67,7 @@
                     @method('PATCH')
                     <p class="line-through py-2">{{ $task->name }}</p>
                     <input type="hidden" name="is_finished" value="0">
-                    <flux:button type="submit">Non Fini</flux:button>
+                    <flux:button type="submit">⨯</flux:button>
                 </form>
              @endif
         @empty
