@@ -18,6 +18,8 @@ class Task extends Model
      */
     protected $fillable = [
         'name',
+        'project_id',
+        'is_finished'
     ];
 
         /**

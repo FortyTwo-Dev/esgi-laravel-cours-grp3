@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProjectController;
-use App\Models\Project;
-use Illuminate\Support\Arr;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,3 +27,6 @@ Route::resource('projects', ProjectController::class);
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::post('/projects/{project}/tasks', [App\Http\Controllers\TaskController::class, 'store'])->name('task.store');
+Route::patch('/projects/{project}/tasks/{task}', [App\Http\Controllers\TaskController::class, 'update'])->name('task.update');
